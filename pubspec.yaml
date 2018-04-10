@@ -1,6 +1,6 @@
 name: flutter_app_badger
 description: Launcher App badger
-version: 1.0.0
+version: 1.0.1
 author: Edouard Marquez <moi@edouard-marquez.me>
 homepage: https://github.com/g123k/flutter_app_badger
 
@@ -11,7 +11,7 @@ dependencies:
 flutter:
   plugin:
     androidPackage: fr.g123k.flutterappbadger
-    pluginClass: FlutterAppBadgePlugin
+    pluginClass: FlutterAppBadgerPlugin
 
 environment:
   sdk: ">=2.0.0-dev.28.0 <3.0.0"
