@@ -1,3 +1,7 @@
+## [1.0.3+2] - 13th September 2019
+
+* README updated
+
 ## [1.0.3] - 25th June 2019
   
 * Android: Migration to the latest version of the ShortcutBadger library (1.1.22)

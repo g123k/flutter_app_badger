@@ -1,5 +1,7 @@
 # Flutter App Badger plugin
 
+[![Pub](https://img.shields.io/pub/v/flutter_app_badger.svg)](https://pub.dartlang.org/packages/flutter_app_badger)
+
 This plugin for [Flutter](https://flutter.io) adds the ability to change the badge of the app in the launcher.
 It supports iOS and some Android devices (the official API does not support the feature, even on Oreo).
 
@@ -40,7 +42,7 @@ Thanks to the [Shortcut Badger library](https://github.com/leolin310148/Shortcut
 
 First, you just have to import the package in your dart files with:
 ```dart
-import 'package:flutterappbadger/flutterappbadger.dart';
+import 'package:flutter_app_badger/flutter_app_badger.dart';
 ```
 
 Then you can add a badge:
