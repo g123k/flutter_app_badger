@@ -1,3 +1,7 @@
+## [1.1.0] - 11th November 2019
+
+* Migration to Android X (thanks to orknist) + Android Target SDK = 29
+
 ## [1.0.3+2] - 13th September 2019
 
 * README updated
