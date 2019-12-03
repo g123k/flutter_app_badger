@@ -1,3 +1,7 @@
+## [1.1.1] - 3rd December 2019
+
+* Migration of the sample to Android X
+
 ## [1.1.0] - 11th November 2019
 
 * Migration to Android X (thanks to orknist) + Android Target SDK = 29
