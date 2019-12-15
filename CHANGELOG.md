@@ -1,3 +1,8 @@
+## [1.1.2] - 15th December 2019
+
+* Support the new plugin pubspec format
+* On Android, the custom dependency to ShortcutBadger is removed, since unused  
+
 ## [1.1.1] - 3rd December 2019
 
 * Migration of the sample to Android X
