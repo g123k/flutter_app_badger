@@ -27,8 +27,8 @@
       [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
       result(nil);
   } else if ([@"getBadgeCount" isEqualToString:call.method]) {
-      NSNumber *count = [UIApplication sharedApplication].applicationIconBadgeNumber;
-      result(count.integerValue);
+      NSInteger *count = [UIApplication sharedApplication].applicationIconBadgeNumber;
+      result(count);
   } else if ([@"isAppBadgeSupported" isEqualToString:call.method]) {
       result(@YES);
   } else {
