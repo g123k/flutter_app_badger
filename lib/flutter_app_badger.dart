@@ -14,6 +14,11 @@ class FlutterAppBadger {
     _channel.invokeMethod('removeBadge');
   }
 
+  static Future<int> getBadgeCount() async {
+    int badgeCount = await _channel.invokeMethod('getBadgeCount');
+    return badgeCount;
+  }
+
   static Future<bool> isAppBadgeSupported() async {
     bool appBadgeSupported = await _channel.invokeMethod('isAppBadgeSupported');
     return appBadgeSupported;

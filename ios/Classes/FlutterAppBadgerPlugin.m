@@ -22,10 +22,13 @@
       NSDictionary *args = call.arguments;
       NSNumber *count = [args objectForKey:@"count"];
       [UIApplication sharedApplication].applicationIconBadgeNumber = count.integerValue;
-    result(nil);
+      result(nil);
   } else if ([@"removeBadge" isEqualToString:call.method]) {
       [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
       result(nil);
+  } else if ([@"getBadgeCount" isEqualToString:call.method]) {
+      NSNumber *count = [UIApplication sharedApplication].applicationIconBadgeNumber;
+      result(count.integerValue);
   } else if ([@"isAppBadgeSupported" isEqualToString:call.method]) {
       result(@YES);
   } else {
