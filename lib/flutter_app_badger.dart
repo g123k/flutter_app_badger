@@ -15,7 +15,7 @@ class FlutterAppBadger {
   }
 
   static Future<bool> isAppBadgeSupported() async {
-    bool appBadgeSupported = await _channel.invokeMethod('isAppBadgeSupported');
-    return appBadgeSupported;
+    bool? appBadgeSupported = await _channel.invokeMethod('isAppBadgeSupported');
+    return appBadgeSupported ?? false;
   }
 }
