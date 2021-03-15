@@ -1,3 +1,7 @@
+## [1.2.0] - 15th March 2021
+
+* Support for null safety 
+
 ## [1.1.2] - 15th December 2019
 
 * Support the new plugin pubspec format
