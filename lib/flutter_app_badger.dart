@@ -6,8 +6,8 @@ class FlutterAppBadger {
   static const MethodChannel _channel =
       const MethodChannel('g123k/flutter_app_badger');
 
-  static Future<void> updateBadgeCount(int count) async {
-    await _channel.invokeMethod('updateBadgeCount', {"count": count});
+  static Future<void> updateBadgeCount(int count) {
+    return _channel.invokeMethod('updateBadgeCount', {"count": count});
   }
 
   static Future<void> removeBadge() async {
