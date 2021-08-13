@@ -2,6 +2,7 @@ package fr.g123k.flutterappbadger;
 
 import android.content.Context;
 
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
@@ -12,32 +13,40 @@ import me.leolin.shortcutbadger.ShortcutBadger;
 /**
  * FlutterAppBadgerPlugin
  */
-public class FlutterAppBadgerPlugin implements MethodCallHandler {
+public class FlutterAppBadgerPlugin implements MethodCallHandler, FlutterPlugin {
 
-  private final Context context;
-
-  private FlutterAppBadgerPlugin(Context context) {
-    this.context = context;
-  }
+  private Context applicationContext;
+  private MethodChannel channel;
+  private static final String CHANNEL_NAME = "g123k/flutter_app_badger";
 
   /**
    * Plugin registration.
    */
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "g123k/flutter_app_badger");
-    channel.setMethodCallHandler(new FlutterAppBadgerPlugin(registrar.activeContext()));
+
+  @Override
+  public void onAttachedToEngine(FlutterPluginBinding flutterPluginBinding) {
+    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), CHANNEL_NAME);
+    channel.setMethodCallHandler(this);
+    applicationContext = flutterPluginBinding.getApplicationContext();
+
   }
 
   @Override
+  public void onDetachedFromEngine(FlutterPluginBinding flutterPluginBinding) {
+    channel.setMethodCallHandler(null);
+    applicationContext = null;
+  }
+  
+  @Override
   public void onMethodCall(MethodCall call, Result result) {
     if (call.method.equals("updateBadgeCount")) {
-      ShortcutBadger.applyCount(context, Integer.valueOf(call.argument("count").toString()));
+      ShortcutBadger.applyCount(applicationContext, Integer.valueOf(call.argument("count").toString()));
       result.success(null);
     } else if (call.method.equals("removeBadge")) {
-      ShortcutBadger.removeCount(context);
+      ShortcutBadger.removeCount(applicationContext);
       result.success(null);
     } else if (call.method.equals("isAppBadgeSupported")) {
-      result.success(ShortcutBadger.isBadgeCounterSupported(context));
+      result.success(ShortcutBadger.isBadgeCounterSupported(applicationContext));
     } else {
       result.notImplemented();
     }
