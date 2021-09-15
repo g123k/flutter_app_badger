@@ -1,3 +1,8 @@
+## [1.3.0] - 15th September 2021
+
+* PR #44 (Use UNUserNotificationCenter instead of deprecated UIUserNotificationSettings on iOS 10+) 
+* PR #47 (Feature/android v2)
+
 ## [1.2.0] - 15th March 2021
 
 * Support for null safety 
