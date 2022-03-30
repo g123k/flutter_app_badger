@@ -33,6 +33,9 @@
       result(nil);
   } else if ([@"isAppBadgeSupported" isEqualToString:call.method]) {
       result(@YES);
+  } else if ([@"getAppBadgeCount" isEqualToString:call.method]) {
+      NSInteger badgeCount = [UIApplication sharedApplication].applicationIconBadgeNumber;
+      result(@(badgeCount));
   } else {
     result(FlutterMethodNotImplemented);
   }
