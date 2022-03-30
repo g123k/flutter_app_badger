@@ -56,8 +56,9 @@ class _MyAppState extends State<MyApp> {
               Text('Badge supported: $_appBadgeSupported\n'),
               ElevatedButton(
                 child: const Text('Add badge'),
-                onPressed: () {
-                  _addBadge();
+                onPressed: () async {
+                  await _addBadge();
+                  setState(() {});
                 },
               ),
               ElevatedButton(
@@ -70,6 +71,7 @@ class _MyAppState extends State<MyApp> {
                 child: const Text('Remove badge'),
                 onPressed: () {
                   _removeBadge();
+                  setState(() {});
                 },
               ),
             ],
@@ -79,8 +81,9 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void _addBadge() {
-    FlutterAppBadger.updateBadgeCount(1);
+  Future<void> _addBadge() async {
+    currentBadge = await _getAppBadgeCount();
+    FlutterAppBadger.updateBadgeCount(++currentBadge);
   }
 
   void _removeBadge() {
