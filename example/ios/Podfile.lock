@@ -4,19 +4,19 @@ PODS:
     - Flutter
 
 DEPENDENCIES:
-  - Flutter (from `Pods/.symlinks/flutter/ios`)
-  - flutter_app_badger (from `Pods/.symlinks/plugins/flutter_app_badger/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_app_badger (from `.symlinks/plugins/flutter_app_badger/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
-    :path: Pods/.symlinks/flutter/ios
+    :path: Flutter
   flutter_app_badger:
-    :path: Pods/.symlinks/plugins/flutter_app_badger/ios
+    :path: ".symlinks/plugins/flutter_app_badger/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
   flutter_app_badger: 65de4d6f0c34a891df49e6cfb8a1c0496426fa68
 
-PODFILE CHECKSUM: 0420ab312a523ae0eecfb1fc19ea51dd82cc17c7
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3

@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_app_badger/flutter_app_badger.dart';
 
-void main() => runApp(new MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
   String _appBadgeSupported = 'Unknown';
-
+  int currentBadge = 0;
   @override
   initState() {
     super.initState();
@@ -43,28 +43,35 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Plugin example app'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Plugin example app'),
         ),
-        body: new SizedBox.expand(
-          child: new Column(
+        body: SizedBox.expand(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              new Text('Badge supported: $_appBadgeSupported\n'),
-              new RaisedButton(
-                child: new Text('Add badge'),
+              Text('Badge supported: $_appBadgeSupported\n'),
+              ElevatedButton(
+                child: const Text('Add badge'),
                 onPressed: () {
                   _addBadge();
                 },
               ),
-              new RaisedButton(
-                  child: new Text('Remove badge'),
-                  onPressed: () {
-                    _removeBadge();
+              ElevatedButton(
+                  child: Text('Get Badge $currentBadge'),
+                  onPressed: () async {
+                    currentBadge = await _getAppBadgeCount();
+                    setState(() {});
                   }),
+              ElevatedButton(
+                child: const Text('Remove badge'),
+                onPressed: () {
+                  _removeBadge();
+                },
+              ),
             ],
           ),
         ),
@@ -78,5 +85,9 @@ class _MyAppState extends State<MyApp> {
 
   void _removeBadge() {
     FlutterAppBadger.removeBadge();
+  }
+
+  Future<int> _getAppBadgeCount() async {
+    return await FlutterAppBadger.getAppBadgeCount();
   }
 }
