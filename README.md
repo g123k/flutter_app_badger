@@ -23,7 +23,7 @@ height="322">
 On iOS, the notification permission is required to update the badge.
 It is automatically asked when the badge is added or removed.
 
-Please also add the following to your Info.plist:
+Please also add the following to your <your project>/ios/Runner/Info.plist:
 ```xml
 <key>UIBackgroundModes</key>
     <array>
@@ -36,7 +36,7 @@ Please also add the following to your Info.plist:
 On macOS, the notification permission is required to update the badge.
 It is automatically asked when the badge is added or removed.
 
-Please also add the following to your Info.plist:
+Please also add the following to your <your project>/macos/Runner/Info.plist:
 ```xml
 <key>NSUserNotificationAlertStyle</key>
 <string>banner</string>
