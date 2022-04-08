@@ -3,14 +3,14 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_app_badger'
-  s.version          = '0.0.1'
-  s.summary          = 'A new Flutter project.'
+  s.version          = '1.3.0'
+  s.summary          = 'Plugin to update the app badge on the launcher (both for Android, iOS and macOS)'
   s.description      = <<-DESC
-A new Flutter project.
+  Plugin to update the app badge on the launcher (both for Android, iOS and macOS)
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/g123k/flutter_app_badger'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = 'Edouard Marquez'
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
