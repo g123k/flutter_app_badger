@@ -1,3 +1,7 @@
+## [1.4.0] - 08th April 2022
+
+* PR #61 (macOS support)
+ 
 ## [1.3.0] - 15th September 2021
 
 * PR #44 (Use UNUserNotificationCenter instead of deprecated UIUserNotificationSettings on iOS 10+) 
