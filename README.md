@@ -3,7 +3,7 @@
 [![Pub](https://img.shields.io/pub/v/flutter_app_badger.svg)](https://pub.dartlang.org/packages/flutter_app_badger)
 
 This plugin for [Flutter](https://flutter.io) adds the ability to change the badge of the app in the launcher.
-It supports iOS, macos, and some Android devices (the official API does not support the feature, even on Oreo).
+It supports iOS, macOS, and some Android devices (the official API does not support the feature, even on Oreo).
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/g123k/flutter_app_badger/master/assets/ios.png" alt="Android badge" style="margin:auto" width="600" 
@@ -31,9 +31,9 @@ Please also add the following to your Info.plist:
     </array>
 ```
 
-## macos
+## macOS
 
-On macos, the notification permission is required to update the badge.
+On macOS, the notification permission is required to update the badge.
 It is automatically asked when the badge is added or removed.
 
 Please also add the following to your Info.plist:
