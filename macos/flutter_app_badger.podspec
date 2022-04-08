@@ -1,6 +1,3 @@
-#
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
 Pod::Spec.new do |s|
   s.name             = 'flutter_app_badger'
   s.version          = '1.3.0'
@@ -12,10 +9,10 @@ Pod::Spec.new do |s|
   s.license          = { :file => '../LICENSE' }
   s.author           = 'Edouard Marquez'
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files     = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
-  s.dependency 'Flutter'
-  
-  s.ios.deployment_target = '8.0'
-end
+  s.dependency 'FlutterMacOS'
 
+  s.platform = :osx
+  s.osx.deployment_target = '10.11'
+end
