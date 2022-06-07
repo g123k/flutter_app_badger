@@ -11,6 +11,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _appBadgeSupported = 'Unknown';
+  int _count = 1;
 
   @override
   initState() {
@@ -73,7 +74,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void _addBadge() {
-    FlutterAppBadger.updateBadgeCount(1);
+    FlutterAppBadger.updateBadgeCount(_count++);
   }
 
   void _removeBadge() {
