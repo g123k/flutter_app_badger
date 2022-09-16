@@ -1,3 +1,9 @@
+## [1.5.0] - 16th September 2022
+
+* PR #52 (Don't overwrite categories on iOS)
+* PR #32 (A Future is now returned)
+* PR #65 (jCenter -> Maven)
+
 ## [1.4.0] - 08th April 2022
 
 * PR #61 (macOS support)
