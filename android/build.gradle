@@ -31,6 +31,9 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    if (project.android.hasProperty('namespace')) {
+        namespace 'fr.g123k.flutterappbadge.flutterappbadger'
+    }
 }
 
 dependencies {
