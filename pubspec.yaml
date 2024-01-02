@@ -1,7 +1,11 @@
 name: flutter_app_badger
 description: Plugin to update the app badge on the launcher (both for Android, iOS and macOS)
-version: 1.5.0
+version: 1.5.1
 homepage: https://github.com/g123k/flutter_app_badger
+
+environment:
+  sdk: '>=2.19.6 <4.0.0'
+  flutter: ">=3.7.12"
 
 dependencies:
   flutter:
@@ -18,7 +22,3 @@ flutter:
       macos:
         pluginClass: FlutterAppBadgerPlugin
 
-
-environment:
-  sdk: '>=2.12.0 <3.0.0'
-  flutter: ">=1.10.0"

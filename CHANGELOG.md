@@ -1,3 +1,7 @@
+## [1.5.0] - 2th January 2024
+
+* Fixed issue with gradle namespace missing and others
+
 ## [1.5.0] - 16th September 2022
 
 * PR #52 (Don't overwrite categories on iOS)
