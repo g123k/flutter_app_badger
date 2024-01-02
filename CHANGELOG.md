@@ -1,6 +1,10 @@
-## [1.5.0] - 2th January 2024
+## [1.5.1] - 2nd January 2024
 
-* Fixed issue with gradle namespace missing and others
+* Fixed an issue with missing Gradle namespace and other related issues.
+* Resolved an issue with the Java target SDK.
+* Adjusted Dart SDK constraint to exclusively support Dart null-safety and Flutter null-safety versions.
+* Corrected the usage of old Flutter embedding in the example app.
+* Updated the wrapper to support the new Gradle version.
 
 ## [1.5.0] - 16th September 2022
 
