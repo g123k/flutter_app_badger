@@ -17,5 +17,6 @@ Pod::Spec.new do |s|
   s.dependency 'Flutter'
   
   s.ios.deployment_target = '8.0'
+  s.resource_bundles = {'flutter_app_badger_privacy' => ['PrivacyInfo.xcprivacy']}
 end
 
