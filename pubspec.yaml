@@ -4,8 +4,8 @@ version: 1.5.2
 homepage: https://github.com/g123k/flutter_app_badger
 
 environment:
-  sdk: ">=3.3.0 <4.0.0"
-  flutter: ">=3.19.1 <4.0.0"
+  sdk: '>=2.19.6 <4.0.0'
+  flutter: '>=3.7.12'
 
 dependencies:
   flutter:

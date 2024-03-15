@@ -1,3 +1,7 @@
+## [1.5.2] - 15th Mart 2024
+
+* Removed unnecessary requestAuthorizationWithOptions for iOS, this plugin doesn't need it to show badges. This should be used only for remote push notification.
+
 ## [1.5.1] - 2nd January 2024
 
 * Fixed an issue with missing Gradle namespace and other related issues.
