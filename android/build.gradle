@@ -1,3 +1,5 @@
+package android
+
 group 'fr.g123k.flutterappbadge.flutterappbadger'
 version '1.0-SNAPSHOT'
 
@@ -22,7 +24,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
+    compileSdk 34
 
     defaultConfig {
         minSdkVersion 16
