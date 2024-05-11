@@ -1,16 +1,13 @@
 name: flutter_app_badger_example
 description: Demonstrates how to use the flutter_app_badger plugin.
 
-environment:                                                      
-  sdk: '>=2.12.0 <3.0.0'
+environment:
+  sdk: '>=2.19.6 <4.0.0'
+  flutter: ">=3.7.12"
 
 dependencies:
   flutter:
     sdk: flutter
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^0.1.0
 
 dev_dependencies:
   flutter_test:
