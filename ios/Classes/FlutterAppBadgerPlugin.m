@@ -21,7 +21,7 @@
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-    if([@"enableNotifications" isEqualToString:call.method) {
+    if([@"enableNotifications" isEqualToString:call.method]) {
         NSDictionary *args = call.arguments;
         NSNumber *enableNotifications = [args objectForKey:@"enableNotifications"];
 
