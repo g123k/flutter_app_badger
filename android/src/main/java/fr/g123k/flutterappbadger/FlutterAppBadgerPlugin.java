@@ -2,6 +2,8 @@ package fr.g123k.flutterappbadger;
 
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
@@ -30,23 +32,28 @@ public class FlutterAppBadgerPlugin implements MethodCallHandler, FlutterPlugin 
   }
 
   @Override
-  public void onDetachedFromEngine(FlutterPluginBinding flutterPluginBinding) {
+  public void onDetachedFromEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel.setMethodCallHandler(null);
     applicationContext = null;
   }
 
   @Override
-  public void onMethodCall(MethodCall call, Result result) {
-    if (call.method.equals("updateBadgeCount")) {
-      ShortcutBadger.applyCount(applicationContext, Integer.valueOf(call.argument("count").toString()));
-      result.success(null);
-    } else if (call.method.equals("removeBadge")) {
-      ShortcutBadger.removeCount(applicationContext);
-      result.success(null);
-    } else if (call.method.equals("isAppBadgeSupported")) {
-      result.success(ShortcutBadger.isBadgeCounterSupported(applicationContext));
-    } else {
-      result.notImplemented();
+  public void onMethodCall(MethodCall call, @NonNull Result result) {
+    switch (call.method) {
+      case "updateBadgeCount":
+        ShortcutBadger.applyCount(applicationContext, Integer.valueOf(call.argument("count").toString()));
+        result.success(null);
+        break;
+      case "removeBadge":
+        ShortcutBadger.removeCount(applicationContext);
+        result.success(null);
+        break;
+      case "isAppBadgeSupported":
+        result.success(ShortcutBadger.isBadgeCounterSupported(applicationContext));
+        break;
+      default:
+        result.notImplemented();
+        break;
     }
   }
 }

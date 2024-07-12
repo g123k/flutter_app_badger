@@ -1,3 +1,15 @@
+## [1.5.2] - 15th Mart 2024
+
+* Removed unnecessary requestAuthorizationWithOptions for iOS, this plugin doesn't need it to show badges. This should be used only for remote push notification.
+
+## [1.5.1] - 2nd January 2024
+
+* Fixed an issue with missing Gradle namespace and other related issues.
+* Resolved an issue with the Java target SDK.
+* Adjusted Dart SDK constraint to exclusively support Dart null-safety and Flutter null-safety versions.
+* Corrected the usage of old Flutter embedding in the example app.
+* Updated the wrapper to support the new Gradle version.
+
 ## [1.5.0] - 16th September 2022
 
 * PR #52 (Don't overwrite categories on iOS)
