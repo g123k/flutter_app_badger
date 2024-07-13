@@ -21,11 +21,18 @@
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
-    [self enableNotifications];
-        
+    if([@"enableNotifications" isEqualToString:call.method]) {
+        NSDictionary *args = call.arguments;
+        NSNumber *enableNotifications = [args objectForKey:@"enableNotifications"];
+
+        if(enableNotifications) {
+            [self enableNotifications];
+        }
+    }
     if ([@"updateBadgeCount" isEqualToString:call.method]) {
         NSDictionary *args = call.arguments;
         NSNumber *count = [args objectForKey:@"count"];
+      
         if (@available(iOS 16, *)) {
             [[UNUserNotificationCenter currentNotificationCenter] setBadgeCount:count.integerValue withCompletionHandler:^(NSError * _Nullable error) {}];
         } else {

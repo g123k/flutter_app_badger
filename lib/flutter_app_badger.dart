@@ -38,19 +38,32 @@ class FlutterAppBadger {
     return appBadgeSupported ?? false;
   }
 
+  static Future<void> enableNotifications() async {
+    final mock = _mockEnableNotifications;
+    if (mock != null) {
+      await mock();
+      return;
+    }
+
+    return _channel.invokeMethod('enableNotifications');
+  }
+
   static Future<void> Function(int count)? _mockUpdateBadgeCount;
   static Future<void> Function()? _mockRemoveBadge;
   static Future<bool> Function()? _mockIsAppBadgeSupported;
+  static Future<bool> Function()? _mockEnableNotifications;
 
   @visibleForTesting
   static void setMocks({
     Future<void> Function(int count)? updateBadgeCount,
     Future<void> Function()? removeBadge,
     Future<bool> Function()? isAppBadgeSupported,
+    Future<bool> Function()? enableNotifications,
   }) {
     _mockUpdateBadgeCount = updateBadgeCount;
     _mockRemoveBadge = removeBadge;
     _mockIsAppBadgeSupported = isAppBadgeSupported;
+    _mockEnableNotifications = enableNotifications;
   }
 
   @visibleForTesting
@@ -58,5 +71,6 @@ class FlutterAppBadger {
     _mockUpdateBadgeCount = null;
     _mockRemoveBadge = null;
     _mockIsAppBadgeSupported = null;
+    _mockEnableNotifications = null;
   }
 }
